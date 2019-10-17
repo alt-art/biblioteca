@@ -1,4 +1,4 @@
-# biblioteca
+# Biblioteca
 Aplicativo para catalogar livros dinamicamente
 
 ```npm install``` ou ```yarn```
