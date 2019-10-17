@@ -1,0 +1,57 @@
+{
+  "name": "Biblioteca",
+  "version": "1.0.0",
+  "description": "catalogar livros rapidamente",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "dimension.biblioteca.catalog",
+    "mac": {
+      "target": "dmg",
+      "category": "utilities",
+      "icon": "./build/icon.ico",
+      "type": "distribution"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "dir",
+          "path": "./build/dmg"
+        }
+      ]
+    },
+    "nsis":{
+      "oneClick": false,
+      "license": "./build/license.txt"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "./build/icon.ico",
+      "publisherName": "Dimension",
+      "legalTrademarks": "Dimension Company"
+    }
+  },
+  "author": "AltArt",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^6.0.12",
+    "electron-builder": "^21.2.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <nav class="nav">
+            <div class="bar">
+                <div class="btn">+ Novo</div>
+                <div class="btn">Pesquisa</div>
+                <div class="btn">A-z</div>
+                <div class="btn" id="close">&nbsp;×&nbsp;</div>
+            </div>
+    </nav>
+    <div class="over">
+        <div class="box">
+            <div class="close">×</div>
+            <h1>Novo</h1>
+            <label><p>Titulo</p><input type="text" id="tn"></label>
+            <label><p>Autor</p><input type="text" id="an"></label>
+            <label><p>Descrição</p><input type="text" id="sn"></label>
+            <label><p>Data</p><input type="text" id="dn"></label>
+            <label><p>Categorias</p><input type="text" id="cn"></label>
+            <input type="button" value="Salvar" id="bn">
+        </div>
+        <div class="box">
+            <div class="close">×</div>
+            <h1>Pesquisa</h1>
+            <input type="search" id="search">
+            <div class="listsearch"></div>
+        </div>
+        <div class="box">
+            <div class="close">×</div>
+            <div class="az"></div>
+        </div>
+        <div class="box">
+            <div class="close">×</div>
+            <h1>Atualizar</h1>
+            <label><p>Titulo</p><input type="text" id="ta"></label>
+            <label><p>Autor</p><input type="text" id="aa"></label>
+            <label><p>Descrição</p><input type="text" id="sa"></label>
+            <label><p>Data</p><input type="text" id="da"></label>
+            <label><p>Categorias</p><input type="text" id="ca"></label>
+            <input type="button" value="Salvar" id="ba">
+        </div>
+    </div>
+    <div class="cont"></div>
+    <script src="./app.js"></script>
+</body>
+</html>

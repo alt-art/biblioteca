@@ -1,0 +1,236 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bar {
+    height: 45px;
+    width: max-content;
+    display: flex;
+    border-top-right-radius: 22.5px;
+    border-bottom-right-radius: 22.5px;
+    background-color: #ffa500;
+}
+
+.bar .btn {
+    margin: 5px;
+    height: 35px;
+    padding: 9px;
+    overflow: hidden;
+    width: max-content;
+    border-radius: 17.5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: black;
+    transition: background-color 200ms linear;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+.bar .btn:hover {
+    background-color: #00000083;
+}
+
+.livro {
+    padding: 1rem;
+    margin-top: 2rem;
+    border-left: 3px orange solid;
+    border-right: 3px orange solid;
+}
+
+.livro .menu {
+    width: 30px;
+    height: 30px;
+    padding: 0px 5px;
+    float: right;
+    border: 2px orange solid;
+    color: orange;
+    overflow: hidden;
+    border-radius: 50%;
+    font-weight: 900;
+    transition: 300ms ease-in-out;
+    user-select: none;
+}
+
+.menu .opt {
+    cursor: pointer;
+    background-color: #f7f7f7;
+    margin-top: 8px;
+    padding: 3px;
+    color: orange;
+}
+
+.livro .menu:hover .cont {
+    margin-top: -20px;
+}
+
+.livro .menu:hover {
+    width: 80px;
+    height: 70px;
+    padding: 0px 0px;
+    color: #00000000;
+    border-radius: 5px;
+    font-weight: normal;
+}
+
+.livro h1 {
+    color: rgb(248, 203, 0);
+}
+
+.livro .categorias {
+    display: flex;
+}
+
+.categorias p {
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    background-color: orange;
+}
+
+.over {
+    position: fixed;
+    display: flex;
+    height: calc(100vh - 45px);
+    width: 100vw;
+    justify-content: center;
+    display: none;
+}
+
+.over .box {
+    width: 80%;
+    height: 90%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #0000004b;
+    position: absolute;
+    color: orange;
+}
+
+.over .box:nth-child(1) {
+    display: none;
+}
+
+.over .box:nth-child(2) {
+    display: none;
+}
+
+.over .box:nth-child(3) {
+    display: none;
+}
+
+.over .box:nth-child(4) {
+    display: none;
+}
+
+.over .box input[type=search] {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    padding-left: calc(17pt + 20px);
+    border-radius: 20px;
+    outline: none;
+    border: 2px black solid;
+    font-size: 17pt;
+    background: url("./search.svg") no-repeat;
+    background-size: 17pt;
+    background-position-y: 50%;
+    background-position-x: 10px;
+    filter: invert(57%) sepia(88%) saturate(614%) hue-rotate(359deg) brightness(101%) contrast(106%);
+    transition: 400ms ease-in-out;
+    transition-property: padding-left, background-position-x;
+}
+
+.over .box:nth-child(2) {
+    overflow-y: scroll;
+}
+
+.over .box:nth-child(3) {
+    overflow-y: scroll;
+}
+
+.over .box input[type=search]:focus {
+    padding-left: 10px;
+    background-position-x: -30px;
+}
+
+.over .box label input[type=text] {
+    margin: 10px;
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 70%;
+    height: 45px;
+    outline: none;
+    border: 2px orange solid;
+    font-size: 17pt;
+    color: orange;
+}
+
+.over .box input[type=button] {
+    margin: 10px;
+    width: 50%;
+    height: 45px;
+    outline: none;
+    background: none;
+    border: 2px orange solid;
+    font-size: 17pt;
+    color: orange;
+}
+
+.over .box label p {position: absolute}
+
+.over .box label p {
+    z-index: 1;
+    background-color: white;
+    font-size: 15pt;
+}
+
+.over .box .close {
+    cursor: pointer;
+    font-size: 18pt;
+    float: right;
+    user-select: none;
+}
+
+div.cont div.lista div.fo{
+    z-index: -1;
+}
+
+div.lista div.fo{
+    position: absolute;
+    color: orange;
+    left: calc(50% - 100px);
+    top: calc(50% - 10px);
+}
+
+body {
+    height: 100vh;
+}
+
+.nav {
+    -webkit-app-region: drag;
+    box-shadow: 0px 0px 20px #0000002a;
+}
+
+.cont .lista {
+    height: calc(100vh - 45px);
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+::-webkit-scrollbar{
+    width: 9px;
+}

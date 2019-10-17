@@ -1,0 +1,7 @@
+Copyright 2018 Dimension
+
+A permissao e concedida, a titulo gratuito, para qualquer pessoa que obtenha uma copia deste software e arquivos de documentacao associados (o 'Software'), para lidar com o Software sem restricao, incluindo, sem limitacao, os direitos para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender copias do Software, e para permitir que as pessoas a quem o Software e fornecido ao faze-lo, mediante as seguintes condicoes:
+
+O aviso de copyright acima e este aviso de permissao devem ser incluidos em todas as copias ou partes substanciais do Software.
+
+O SOFTWARE E FORNECIDO 'TAL COMO ESTA', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLICITA, INCLUINDO, MAS NAO LIMITADO A, GARANTIAS DE COMERCIALIZACAO, ADEQUACAO A UMA FINALIDADE ESPECIFICA E NAO VIOLACAO. EM NENHUM CASO OS AUTORES OU DETENTORES DOS DIREITOS DE AUTOR SERA RESPONSAVEL POR QUALQUER RECLAMACAO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA ACAO DE CONTRATO, ATO ILICITO OU DE OUTRA FORMA, DECORRENTES DE OU EM CONEXAO COM O SOFTWARE OU O USO OU OUTRAS TRANSACOES NO SOFTWARE.
