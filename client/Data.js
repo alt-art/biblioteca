@@ -1,3 +1,4 @@
+'use strict';
 let fs = require("fs");
 let home = require("os").homedir;
 module.exports = class Da {
