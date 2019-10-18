@@ -3,7 +3,7 @@
 let {remote} = require("electron");
 let win = remote.getCurrentWindow();
 let Da = require("./Data");
-let d = new Da();
+let da = new Da();
 let c = document.querySelector("div#close");
 c.addEventListener("click",()=>win.close());
 /* strutura dos dados */
@@ -76,11 +76,11 @@ let listView = new View();
 let azView = new View();
 let az = document.querySelector("div.az");
 let cont = document.querySelector("div.cont");
-d.lo(r=>listView.view(cont,r));
+da.lo(r=>listView.view(cont,r));
 
 function dele(i) {
-    d.del(i,()=>{
-        d.lo(r=>{
+    da.del(i,()=>{
+        da.lo(r=>{
             searchView.view(listsearch,[]);
             listView.view(cont,r)
             let d = r.sort(function (a, b) {
@@ -102,9 +102,9 @@ function upd(i) {
     let box = document.querySelector(`div.box:nth-child(4)`);
     over.style.display = "flex";
     box.style.display = "block";
-    d.lo(r =>{
-        let da = document.querySelector("input#da");
-        da.value = r[i].data;
+    da.lo(r =>{
+        let dda = document.querySelector("input#da");
+        dda.value = r[i].data;
         let aa = document.querySelector("input#aa");
         aa.value = r[i].author;
         let ta = document.querySelector("input#ta");
@@ -116,12 +116,19 @@ function upd(i) {
         let ba = document.querySelector("input#ba");
         ba.addEventListener("click",()=>{
             opned = false;
-            d.upd({"titulo":ta.value,"author":aa.value,"desc":sa.value,"data":da.value,"categoria":ca.value},i,()=>{
+            let obj = {
+                "titulo":ta.value,
+                "author":aa.value,
+                "desc":sa.value,
+                "data":dda.value,
+                "categoria":ca.value
+            }
+            da.upd(obj,i,()=>{
                 over.style.display = "none";
                 box.style.display = "none";
                 clos(2);
                 clos(3);
-                d.lo(r=>listView.view(cont,r));
+                da.lo(r=>listView.view(cont,r));
             });
         });
     })
@@ -135,8 +142,15 @@ bn.addEventListener("click",()=>{
     let tn = document.querySelector("input#tn");
     let sn = document.querySelector("input#sn");
     let cn = document.querySelector("input#cn");
-    d.wri({"titulo":tn.value,"author":an.value,"desc":sn.value,"data":dn.value,"categoria":cn.value},()=>{
-        d.lo(r=>listView.view(cont,r));
+    let obj = {
+        "titulo":tn.value,
+        "author":an.value,
+        "desc":sn.value,
+        "data":dn.value,
+        "categoria":cn.value
+    }
+    da.wri(obj,()=>{
+        da.lo(r=>listView.view(cont,r));
         let over = document.querySelector("div.over");
         let box = document.querySelector(`div.box:nth-child(1)`);
         over.style.display = "none";
@@ -160,7 +174,7 @@ function search(inp) {
     let searchFix = search.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
     let regs = `((\w+)?${searchFix}(\w+)?)`;
     let searchD = [];
-    d.lo(data=>{
+    da.lo(data=>{
         data.forEach(a=>{
             let reg = new RegExp(regs,"i");
             let ar = a.categoria.split(", ");
@@ -186,7 +200,7 @@ for (let i = 1; i < 4; i++) {
         if (!opned) {
             opned = true;
             if (i == 3) {
-            d.lo(r=>{
+            da.lo(r=>{
                 let d = r.sort(function (a, b) {
                     if (a.titulo > b.titulo) {
                       return 1;
