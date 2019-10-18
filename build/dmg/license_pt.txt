@@ -1,7 +1,7 @@
 Copyright 2018 Dimension
 
-A permissão é concedida, a título gratuito, para qualquer pessoa que obtenha uma cópia deste software e arquivos de documentação associados (o 'Software'), para lidar com o Software sem restrição, incluindo, sem limitação, os direitos para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software, e para permitir que as pessoas a quem o Software é fornecido ao fazê-lo, mediante as seguintes condições:
+A permissao e concedida, a titulo gratuito, para qualquer pessoa que obtenha uma copia deste software e arquivos de documentaçao associados (o 'Software'), para lidar com o Software sem restriçao, incluindo, sem limitaçao, os direitos para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender copias do Software, e para permitir que as pessoas a quem o Software e fornecido ao fazê-lo, mediante as seguintes condiçoes:
 
-O aviso de copyright acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do Software.
+O aviso de copyright acima e este aviso de permissao devem ser incluidos em todas as copias ou partes substanciais do Software.
 
-O SOFTWARE É FORNECIDO 'TAL COMO ESTÁ', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO LIMITADO A, GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA E NÃO VIOLAÇÃO. EM NENHUM CASO OS AUTORES OU DETENTORES DOS DIREITOS DE AUTOR SERÁ RESPONSÁVEL POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU DE OUTRA FORMA, DECORRENTES DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS TRANSAÇÕES NO SOFTWARE.
+O SOFTWARE E FORNECIDO 'TAL COMO ESTA', SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLICITA, INCLUINDO, MAS NAO LIMITADO A, GARANTIAS DE COMERCIALIZAÇAO, ADEQUAÇAO A UMA FINALIDADE ESPECIFICA E NAO VIOLAÇAO. EM NENHUM CASO OS AUTORES OU DETENTORES DOS DIREITOS DE AUTOR SERA RESPONSAVEL POR QUALQUER RECLAMAÇAO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇAO DE CONTRATO, ATO ILICITO OU DE OUTRA FORMA, DECORRENTES DE OU EM CONEXAO COM O SOFTWARE OU O USO OU OUTRAS TRANSAÇOES NO SOFTWARE.
