@@ -1,5 +1,5 @@
 'use strict';
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow} = require('electron');
 let win;
 
 function createWindow () {
@@ -10,7 +10,7 @@ function createWindow () {
     width: 800,
     minWidth: 400,
     height: 600,
-    minHeight: 500,
+    minHeight: 540,
     webPreferences: {
       nodeIntegration: true,
       devTools: false
@@ -21,7 +21,7 @@ function createWindow () {
   win.loadFile("./client/index.html");
   win.once("ready-to-show",()=> win.show());
   win.on("closed", () => {
-    win = null
+    win = null;
   });
 }
 

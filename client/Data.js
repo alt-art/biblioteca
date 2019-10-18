@@ -9,8 +9,7 @@ module.exports = class Da {
         fs.readFile(this.path,"utf-8",(e,r)=>{
             if (r == "") {
                 callback(Array());
-            }
-            if (r == undefined) {
+            } else if (r == undefined) {
                 fs.mkdir(`${home}/Documents/Biblioteca`,()=>{fs.writeFile(this.path,"[]",()=>callback([]))});
             } else {
                 callback(JSON.parse(r));

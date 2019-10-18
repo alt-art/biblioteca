@@ -6,7 +6,6 @@ let Da = require("./Data");
 let da = new Da();
 let c = document.querySelector("div#close");
 c.addEventListener("click",()=>win.close());
-/* strutura dos dados */
 class View {
     view(s,d) {
         if (this.lista) this.lista.remove();
@@ -163,8 +162,6 @@ bn.addEventListener("click",()=>{
     });
 })
 
-
-/* Pesquisar*/
 let inpSearch = document.querySelector("input#search");
 let listsearch = document.querySelector("div.listsearch");
 inpSearch.addEventListener("keydown",()=>setTimeout(()=>search(inpSearch),100));
@@ -192,7 +189,6 @@ function search(inp) {
     });
 }
 
-/* open */
 let opned = false
 for (let i = 1; i < 4; i++) {
     let btn = document.querySelector(`div.btn:nth-child(${i})`);
