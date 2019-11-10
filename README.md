@@ -5,6 +5,8 @@ Aplicativo para catalogar livros dinamicamente
 
 # Codigo Aberto
 
+````git clone https://github.com/alt-art/biblioteca.git```
+
 ```npm install```
 
 ```npm start```
