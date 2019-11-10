@@ -1,5 +1,4 @@
 'use strict';
-/* electron */
 let {remote} = require("electron");
 let win = remote.getCurrentWindow();
 let Da = require("./Data");
@@ -70,15 +69,12 @@ class View {
         s.appendChild(this.lista);
     }
 }
-
-/* carregar livros */
 let searchView = new View();
 let listView = new View();
 let azView = new View();
 let az = document.querySelector("div.az");
 let cont = document.querySelector("div.cont");
 da.lo(false,r=>listView.view(cont,r));
-
 function dele(i) {
     da.del(i,()=>{
         da.lo(null,r=>{
@@ -97,7 +93,6 @@ function dele(i) {
         });
     });
 }
-
 function upd(id) {
     let over = document.querySelector("div.over");
     let box = document.querySelector(`div.box:nth-child(4)`);
@@ -135,7 +130,6 @@ function upd(id) {
     });
     
 }
-
 let bn = document.querySelector("input#bn");
 bn.addEventListener("click",()=>{
     opned = false;
@@ -164,11 +158,9 @@ bn.addEventListener("click",()=>{
         cn.value = "";
     });
 });
-
 let inpSearch = document.querySelector("input#search");
 let listsearch = document.querySelector("div.listsearch");
 inpSearch.addEventListener("keydown",()=>setTimeout(()=>search(inpSearch),100));
-
 function search(inp) {
     let search =  inp.value;
     let searchFix = search.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
@@ -191,7 +183,6 @@ function search(inp) {
         searchView.view(listsearch,searchD);
     });
 }
-
 let opned = false
 for (let i = 1; i < 4; i++) {
     let btn = document.querySelector(`div.btn:nth-child(${i})`);
@@ -219,12 +210,10 @@ for (let i = 1; i < 4; i++) {
         }
     });
 }
-
 for (let i = 1; i < 5; i++) {
     let close = document.querySelector(`div.box:nth-child(${i}) div.close`);
     close.addEventListener("click",()=>clos(i));
 }
-
 function clos(i) {
     let over = document.querySelector("div.over");
     let box = document.querySelector(`div.box:nth-child(${i})`);

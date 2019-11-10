@@ -10,15 +10,12 @@ module.exports = class {
             callback(res);
         });
     }
-
     wri(obj,callback) {
         db.insert(obj,()=>callback?callback():null);
     }
-
     upd(obj,id,callback) {
         db.update({_id: id},obj,{},()=>callback?callback():null);
     }
-
     del(id,callback) {
         db.remove({_id: id},()=>callback?callback():null);
     }
