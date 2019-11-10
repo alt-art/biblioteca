@@ -1,6 +1,6 @@
 {
   "name": "Biblioteca",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "catalogar livros rapidamente",
   "main": "main.js",
   "scripts": {
