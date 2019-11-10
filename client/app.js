@@ -16,14 +16,16 @@ class View {
                     let up = document.createElement("div");
                     up.textContent = "Atualizar";
                     up.className = "opt";
+                    up.id = d[i]._id;
                     up.addEventListener("click",()=>{
-                        upd(i);
+                        upd(up.id);
                     });
                     let del = document.createElement("div");
                     del.className = "opt";
                     del.textContent = "Deletar";
+                    del.id = d[i]._id;
                     del.addEventListener("click",()=>{
-                        dele(i);
+                        dele(del.id);
                     });
                     let cont = document.createElement("div");
                     cont.className = "cont";
@@ -75,13 +77,13 @@ let listView = new View();
 let azView = new View();
 let az = document.querySelector("div.az");
 let cont = document.querySelector("div.cont");
-da.lo(r=>listView.view(cont,r));
+da.lo(false,r=>listView.view(cont,r));
 
 function dele(i) {
     da.del(i,()=>{
-        da.lo(r=>{
+        da.lo(null,r=>{
             searchView.view(listsearch,[]);
-            listView.view(cont,r)
+            listView.view(cont,r);
             let d = r.sort(function (a, b) {
                 if (a.titulo > b.titulo) {
                   return 1;
@@ -96,41 +98,42 @@ function dele(i) {
     });
 }
 
-function upd(i) {
+function upd(id) {
     let over = document.querySelector("div.over");
     let box = document.querySelector(`div.box:nth-child(4)`);
     over.style.display = "flex";
     box.style.display = "block";
-    da.lo(r =>{
+    da.lo(id,(r)=>{
         let dda = document.querySelector("input#da");
-        dda.value = r[i].data;
+        dda.value = r[0].data;
         let aa = document.querySelector("input#aa");
-        aa.value = r[i].author;
+        aa.value = r[0].author;
         let ta = document.querySelector("input#ta");
-        ta.value = r[i].titulo;
+        ta.value = r[0].titulo;
         let sa = document.querySelector("input#sa");
-        sa.value = r[i].desc;
+        sa.value = r[0].desc;
         let ca = document.querySelector("input#ca");
-        ca.value = r[i].categoria;
+        ca.value = r[0].categoria;
         let ba = document.querySelector("input#ba");
         ba.addEventListener("click",()=>{
-            opned = false;
-            let obj = {
-                "titulo":ta.value,
-                "author":aa.value,
-                "desc":sa.value,
-                "data":dda.value,
-                "categoria":ca.value
-            }
-            da.upd(obj,i,()=>{
-                over.style.display = "none";
-                box.style.display = "none";
-                clos(2);
-                clos(3);
-                da.lo(r=>listView.view(cont,r));
-            });
+        opned = false;
+        let obj = {
+            "titulo":ta.value,
+            "author":aa.value,
+            "desc":sa.value,
+            "data":dda.value,
+            "categoria":ca.value
+        }
+        da.upd(obj,id,()=>{
+            over.style.display = "none";
+            box.style.display = "none";
+            clos(2);
+            clos(3);
+            da.lo(null,r=>listView.view(cont,r));
         });
-    })
+    });
+    });
+    
 }
 
 let bn = document.querySelector("input#bn");
@@ -149,7 +152,7 @@ bn.addEventListener("click",()=>{
         "categoria":cn.value
     }
     da.wri(obj,()=>{
-        da.lo(r=>listView.view(cont,r));
+        da.lo(null,r=>listView.view(cont,r));
         let over = document.querySelector("div.over");
         let box = document.querySelector(`div.box:nth-child(1)`);
         over.style.display = "none";
@@ -160,7 +163,7 @@ bn.addEventListener("click",()=>{
         sn.value = "";
         cn.value = "";
     });
-})
+});
 
 let inpSearch = document.querySelector("input#search");
 let listsearch = document.querySelector("div.listsearch");
@@ -171,7 +174,7 @@ function search(inp) {
     let searchFix = search.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
     let regs = `((\w+)?${searchFix}(\w+)?)`;
     let searchD = [];
-    da.lo(data=>{
+    da.lo(null,data=>{
         data.forEach(a=>{
             let reg = new RegExp(regs,"i");
             let ar = a.categoria.split(", ");
@@ -182,7 +185,7 @@ function search(inp) {
                     if(reg.test(c)) {
                         searchD.push(a);
                     }
-                })
+                });
             } 
         });
         searchView.view(listsearch,searchD);
@@ -196,7 +199,7 @@ for (let i = 1; i < 4; i++) {
         if (!opned) {
             opned = true;
             if (i == 3) {
-            da.lo(r=>{
+            da.lo(null,r=>{
                 let d = r.sort(function (a, b) {
                     if (a.titulo > b.titulo) {
                       return 1;
@@ -214,12 +217,12 @@ for (let i = 1; i < 4; i++) {
         over.style.display = "flex";
         box.style.display = "block";
         }
-    })
+    });
 }
 
 for (let i = 1; i < 5; i++) {
     let close = document.querySelector(`div.box:nth-child(${i}) div.close`);
-    close.addEventListener("click",()=>clos(i))
+    close.addEventListener("click",()=>clos(i));
 }
 
 function clos(i) {

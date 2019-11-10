@@ -1,45 +1,25 @@
 'use strict';
-let fs = require("fs");
-let home = require("os").homedir;
-module.exports = class Da {
-    constructor() {
-        this.path = `${home}\\Documents\\Biblioteca\\data.json`;
-    }
-    lo(callback) {
-        fs.readFile(this.path,"utf-8",(e,r)=>{
-            if (r == "") {
-                callback(Array());
-            } else if (r == undefined) {
-                fs.mkdir(`${home}/Documents/Biblioteca`,()=>{fs.writeFile(this.path,"[]",()=>callback([]))});
-            } else {
-                callback(JSON.parse(r));
-            }
+var {remote} = require('electron');
+const userData = remote.app.getPath('userData');
+let path = `${userData}\\db\\livros.db`;
+let Datastore = require("nedb");
+let db = new Datastore({filename: path, autoload:true});
+module.exports = class {
+    lo(id,callback) {
+        db.find(id?{_id:id}:{},(err,res)=>{
+            callback(res);
         });
     }
 
     wri(obj,callback) {
-        this.lo(r=>{
-            let dw = r;
-            dw.push(obj);
-            fs.writeFile(this.path,JSON.stringify(dw),()=>callback?callback():null);
-        });
+        db.insert(obj,()=>callback?callback():null);
     }
 
     upd(obj,id,callback) {
-        this.lo(r=>{ 
-            let du = r;
-            du[id] = obj;
-            setTimeout(()=>{
-                fs.writeFile(this.path,JSON.stringify(du),()=>callback?callback():null);
-            },500);
-        })
+        db.update({_id: id},obj,{},()=>callback?callback():null);
     }
 
     del(id,callback) {
-        this.lo(r=>{
-            let de = r;
-            de.splice(id,1);
-            fs.writeFile(this.path,JSON.stringify(de),()=>callback?callback():null);
-        })
+        db.remove({_id: id},()=>callback?callback():null);
     }
 }

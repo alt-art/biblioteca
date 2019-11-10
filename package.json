@@ -30,7 +30,7 @@
         }
       ]
     },
-    "nsis":{
+    "nsis": {
       "oneClick": false,
       "license": "./build/license.txt"
     },
@@ -53,5 +53,7 @@
     "electron": "^6.0.12",
     "electron-builder": "^21.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
 }
