@@ -14,7 +14,7 @@ module.exports = class {
         db.insert(obj,()=>callback?callback():null);
     }
     upd(obj,id,callback) {
-        db.update({_id: id},obj,{},()=>callback?callback():null);
+        db.update({_id: id},{$set: obj},{},()=>callback?callback():null);
     }
     del(id,callback) {
         db.remove({_id: id},()=>callback?callback():null);

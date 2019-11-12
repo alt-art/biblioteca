@@ -93,7 +93,9 @@ function dele(i) {
         });
     });
 }
+let idr;
 function upd(id) {
+    idr =  id;
     let over = document.querySelector("div.over");
     let box = document.querySelector(`div.box:nth-child(4)`);
     over.style.display = "flex";
@@ -111,24 +113,24 @@ function upd(id) {
         ca.value = r[0].categoria;
         let ba = document.querySelector("input#ba");
         ba.addEventListener("click",()=>{
-        opned = false;
-        let obj = {
-            "titulo":ta.value,
-            "author":aa.value,
-            "desc":sa.value,
-            "data":dda.value,
-            "categoria":ca.value
-        }
-        da.upd(obj,id,()=>{
-            over.style.display = "none";
-            box.style.display = "none";
-            clos(2);
-            clos(3);
-            da.lo(null,r=>listView.view(cont,r));
+            opned = false;
+            let obj = {
+                "titulo":ta.value,
+                "author":aa.value,
+                "desc":sa.value,
+                "data":dda.value,
+                "categoria":ca.value
+            }
+            da.upd(obj,idr,()=>{
+                over.style.display = "none";
+                box.style.display = "none";
+                clos(2);
+                clos(3);
+                da.lo(null,r=>listView.view(cont,r));
+            });
+            idr = 0;
         });
     });
-    });
-    
 }
 let bn = document.querySelector("input#bn");
 bn.addEventListener("click",()=>{
