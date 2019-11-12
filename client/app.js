@@ -168,7 +168,7 @@ function search(inp) {
     let searchD = [];
     da.lo(null,data=>{
         data.forEach(a=>{
-            let reg = new RegExp(regs,"i");
+            let reg = new RegExp(regs,"gi");
             let ar = a.categoria.split(", ");
             if(reg.test(a.titulo)||reg.test(a.desc)||reg.test(a.data)||reg.test(a.author)) {
                 searchD.push(a);
